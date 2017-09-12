@@ -55,3 +55,27 @@ r_squared = coefficient_of_determination(ys, regression_line)
 print(r_squared)
 
 #O/P -0.584415584416
+
+#Testing for assumptions
+#Ignore the hardcore dataset defined above for xs and ys and create a dataset
+#hm - how many datapoints you wish to have
+import random 
+def create_dataset(hm, variance, step=2, correlation = False ):
+    val = 1
+    ys = []
+    for i in range(hm):
+        y = val +random.randrange(-variance, variance)
+        ys.append(y)
+        if correlation and correlation == 'pos':
+            val +=step
+        elif correlation and correlation == 'neg':
+            val -=step
+    xs = [i for i in range(len(ys))]
+    return np.array(xs, dtype=np.float64), np.array(ys, dtype = np.float64)
+
+xs, ys = create_dataset(40,8,2, correlation ='pos')
+#You can change the values of the how many datapoints, variance, correlations and check the rsquared error to plot and visulaise how it behaves 
+#with the changing values
+
+#All the best!
+
