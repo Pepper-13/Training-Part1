@@ -31,3 +31,13 @@ print(m,b)
 
 #O/P - 0.428571428571 4.0
 
+#Checking the regression line in visualisation 
+
+from matplotlib import style
+style.use('fivethirtyeight')
+regression_line = [(m*x)+b for x in xs]
+plt.scatter(xs,ys)
+plt.plot(xs, regression_line)
+plt.show()
+
+
