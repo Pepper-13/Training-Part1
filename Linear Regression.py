@@ -18,3 +18,16 @@ def best_fit_slope(xs,ys):
 
 m = best_fit_slope(xs,ys)
 print(m)
+
+#O/P  - 0.428571428571
+
+def best_fit_slope_and_intercept(xs,ys):
+    m = ( (mean(xs)* mean(ys)) - mean(xs*ys))/ ((mean(xs)**2) - (mean(xs**2)))
+    b = mean(ys) - m*mean(xs)
+    return m, b
+
+m, b = best_fit_slope_and_intercept(xs,ys)
+print(m,b)
+
+#O/P - 0.428571428571 4.0
+
