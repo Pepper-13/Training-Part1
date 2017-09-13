@@ -70,4 +70,19 @@ def k_nearest_neighbors(data, predict, k =3):
 result = k_nearest_neighbors(dataset, new_feature, k =2)
 print(result)
 
+#Now applying to the breast-cancer-wisconsin.data.txt dataset
+import pandas as pd
+import random 
 
+df = pd.read_csv("C:/Users/Hi/Documents/Prep/Datasets/breast-cancer-wisconsin.data.txt")
+df.replace("?", -99999, inplace = True)
+df.drop(['Id'], 1, inplace = True)
+df.drop(['Unnamed: 11'], 1, inplace = True)
+full_data = df.astype(float).values.tolist()
+random.shuffle(full_data)
+
+test_size = 0.2
+train_set = {2:[], 4:[]}
+test_set = {2:[], 4:[]}
+train_data = full_data[:-int(test_size*len(full_data))]
+test_data = full_data[-int(test_size*len(full_data)):]
