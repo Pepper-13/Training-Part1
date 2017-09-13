@@ -17,3 +17,16 @@ clf = neighbors.KNeighborsClassifier()
 clf.fit(X_train, y_train)
 accuracy = clf.score(X_test, y_test)
 print(accuracy)
+
+example_measure = np.array([4,2,4,1,1,,2,3,4,1])
+example_measure = example-measure.reshape(len(example_measure),-1)
+prediction = clf.predict(example_measure)
+print(prediction)
+
+#Euclidean Distance
+from math import sqrt
+plot1 = [1,3]
+plot2 = [2, 5]
+
+euclidean_dist = sqrt((plot1[0] - plot2[0])**2  + (plot1[1] - plot2[1])**2)
+print(euclidean_dist)
