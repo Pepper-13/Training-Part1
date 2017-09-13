@@ -30,3 +30,16 @@ plot2 = [2, 5]
 
 euclidean_dist = sqrt((plot1[0] - plot2[0])**2  + (plot1[1] - plot2[1])**2)
 print(euclidean_dist)
+
+
+#Forming K-Nearest Neighbor algo 
+import numpy as np
+from math import sqrt
+import matplotlib.pyplot as plt
+import warnings
+from matplotlib import style
+from collections import Counter
+style.use("fivethirtyeight")
+
+dataset= {'k':[[1,2],[2,3],[3,4]], 'r':[[5,6],[7,8],[8,8]]}
+new_feature = [5,7]
