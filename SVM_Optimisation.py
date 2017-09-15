@@ -44,3 +44,21 @@ class Support_Vector_Machine:
         b_multiple = 5
         latest_optimum  = self.max_feature_value * 10
         
+        for step in step_sizes:
+            w = np.array([latest_optimum, latest_optimum])
+            #we can do this becoz convex
+            optimised = False
+            while not optimised:
+                for b in np.range(-1*(self.max_feature_value* b_range_multiple), self.max_feature_value *b_range_multiple, step*b_multiple):
+                    for transformation in transforms:
+                        w_t = w*transformation 
+                        found_option = True
+                        #Weakest link in the SVM fundamentally 
+                        #SMO attempts to fix this a bit 
+                        #yi(xi.w +b) >=1
+                        #
+                        for i in self.data:
+                            for xi in self.data[i]:
+                                yi = i
+                                if not yi*(np.dot(w_t,xi)+b ) >=1:
+                                    found_option = False
