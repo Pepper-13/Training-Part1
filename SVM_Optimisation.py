@@ -38,3 +38,9 @@ class Support_Vector_Machine:
                       #point of expense:
                      self.max_feature_value * 0.001]
         
+        #extremely expensive;
+        b_range_multiple = 5
+        #
+        b_multiple = 5
+        latest_optimum  = self.max_feature_value * 10
+        
