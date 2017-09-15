@@ -62,3 +62,19 @@ class Support_Vector_Machine:
                                 yi = i
                                 if not yi*(np.dot(w_t,xi)+b ) >=1:
                                     found_option = False
+                             
+                        if found_option:
+                            opt_dict[np.linalg.norm(w_t)] = [w_t,b]
+                    
+                if w[0]< 0:
+                    optimized = True
+                    print("Optimized  a step")
+                else:
+                    w = w - step
+                    
+            norms = sorted([n for n in opt_dict])
+            #|w| : [w,b]
+            opt_choice  = opt_dict[norms[0]]
+            self.w = opt_choice[0]
+            self.b = opt_choice[1]
+            latest_optimum = opt_choice[0][0] +step*2 
