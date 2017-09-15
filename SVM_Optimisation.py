@@ -33,3 +33,8 @@ class Support_Vector_Machine:
         self.min_feature_value = min(all_data)
         all_data = None
         
+        step_sizes = [self.max_feature_value * 0.1, 
+                     self.max_feature_value * 0.01,
+                      #point of expense:
+                     self.max_feature_value * 0.001]
+        
