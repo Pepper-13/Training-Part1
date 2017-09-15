@@ -78,3 +78,17 @@ class Support_Vector_Machine:
             self.w = opt_choice[0]
             self.b = opt_choice[1]
             latest_optimum = opt_choice[0][0] +step*2 
+            
+    def predict(self,features):
+        #sign( x.w +b )
+        classification = np.sign(np.dot(np.array(features), self.w) + self.b)
+        
+        return classification
+    
+    
+data_dict = {-1:np.array([[1,7],
+                         [2,8],
+                         [3,8]]), 
+            1:np.array([[5,1],
+                      [6,-1],
+                      [7,3]])}
